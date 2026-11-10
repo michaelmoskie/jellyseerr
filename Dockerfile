@@ -36,6 +36,8 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store CYPRESS_INSTALL_BINARY=0 pnpm 
 
 RUN pnpm build
 
+RUN rm -rf .next/cache
+
 FROM node:22.23.4-alpine3.23@sha256:206878a60dc7014193f418ab9259b6110c15fbd514b3044a267be706509944e4
 ARG SOURCE_DATE_EPOCH
 ARG COMMIT_TAG
